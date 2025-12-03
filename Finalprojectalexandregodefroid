@@ -104,7 +104,7 @@
         }
 
         .executive-summary {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
             border-left: 5px solid #667eea;
             padding: 25px;
             margin: 20px 0;
@@ -153,8 +153,10 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        .chart-container canvas {
-            max-height: 400px;
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            width: 100%;
         }
 
         .policy-option {
@@ -167,7 +169,7 @@
 
         .recommended {
             border-left-color: #28a745;
-            background: linear-gradient(135deg, #28a74515 0%, #20c99715 100%);
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, rgba(32, 201, 151, 0.1) 100%);
         }
 
         .recommended h3::after {
@@ -264,6 +266,10 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .chart-wrapper {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -341,17 +347,23 @@
 
             <div class="chart-container">
                 <h3>Growth of State AI Legislation (2020-2024)</h3>
-                <canvas id="legislationGrowth"></canvas>
+                <div class="chart-wrapper">
+                    <canvas id="legislationGrowth"></canvas>
+                </div>
             </div>
 
             <div class="chart-container">
                 <h3>Small Business Response to AI Regulations</h3>
-                <canvas id="businessResponse"></canvas>
+                <div class="chart-wrapper">
+                    <canvas id="businessResponse"></canvas>
+                </div>
             </div>
 
             <div class="chart-container">
                 <h3>Economic Impact of Compliance Costs</h3>
-                <canvas id="economicImpact"></canvas>
+                <div class="chart-wrapper">
+                    <canvas id="economicImpact"></canvas>
+                </div>
             </div>
         </section>
 
@@ -470,139 +482,146 @@
     </div>
 
     <script>
-        // Legislation Growth Chart
-        const ctx1 = document.getElementById('legislationGrowth').getContext('2d');
-        new Chart(ctx1, {
-            type: 'line',
-            data: {
-                labels: ['2020', '2021', '2022', '2023', '2024'],
-                datasets: [{
-                    label: 'AI Bills Introduced',
-                    data: [45, 78, 125, 191, 693],
-                    borderColor: '#667eea',
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Number of Bills'
-                        }
-                    }
-                }
-            }
-        });
-
-        // Business Response Chart
-        const ctx2 = document.getElementById('businessResponse').getContext('2d');
-        new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['Concerned About Costs', 'Would Scale Down AI', 'Would Avoid AI', 'AI Increased Workforce'],
-                datasets: [{
-                    label: 'Percentage of Small Businesses',
-                    data: [65, 33, 20, 82],
-                    backgroundColor: [
-                        'rgba(220, 53, 69, 0.8)',
-                        'rgba(255, 193, 7, 0.8)',
-                        'rgba(255, 87, 34, 0.8)',
-                        'rgba(40, 167, 69, 0.8)'
-                    ],
-                    borderColor: [
-                        'rgb(220, 53, 69)',
-                        'rgb(255, 193, 7)',
-                        'rgb(255, 87, 34)',
-                        'rgb(40, 167, 69)'
-                    ],
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        title: {
-                            display: true,
-                            text: 'Percentage (%)'
-                        }
-                    }
-                }
-            }
-        });
-
-        // Economic Impact Chart
-        const ctx3 = document.getElementById('economicImpact').getContext('2d');
-        new Chart(ctx3, {
-            type: 'doughnut',
-            data: {
-                labels: ['Compliance Costs (CA)', 'Job Losses (CO)', 'Economic Output Loss (CO)'],
-                datasets: [{
-                    label: 'Economic Impact',
-                    data: [16000, 40000, 7000000000],
-                    backgroundColor: [
-                        'rgba(102, 126, 234, 0.8)',
-                        'rgba(118, 75, 162, 0.8)',
-                        'rgba(220, 53, 69, 0.8)'
-                    ],
-                    borderColor: [
-                        'rgb(102, 126, 234)',
-                        'rgb(118, 75, 162)',
-                        'rgb(220, 53, 69)'
-                    ],
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'bottom'
+        // Wait for page to load
+        window.addEventListener('load', function() {
+            // Legislation Growth Chart
+            const ctx1 = document.getElementById('legislationGrowth');
+            if (ctx1) {
+                new Chart(ctx1, {
+                    type: 'line',
+                    data: {
+                        labels: ['2020', '2021', '2022', '2023', '2024'],
+                        datasets: [{
+                            label: 'AI Bills Introduced',
+                            data: [45, 78, 125, 191, 693],
+                            borderColor: '#667eea',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        }]
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.label || '';
-                                if (label) {
-                                    label += ': ';
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Number of Bills'
                                 }
-                                if (context.parsed !== null) {
-                                    if (context.dataIndex === 0) {
-                                        label += '$' + context.parsed.toLocaleString();
-                                    } else if (context.dataIndex === 1) {
-                                        label += context.parsed.toLocaleString() + ' jobs';
-                                    } else {
-                                        label += '$' + (context.parsed / 1000000000).toFixed(1) + 'B';
-                                    }
-                                }
-                                return label;
                             }
                         }
                     }
-                }
+                });
+            }
+
+            // Business Response Chart
+            const ctx2 = document.getElementById('businessResponse');
+            if (ctx2) {
+                new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Concerned About Costs', 'Would Scale Down AI', 'Would Avoid AI', 'AI Increased Workforce'],
+                        datasets: [{
+                            label: 'Percentage of Small Businesses',
+                            data: [65, 33, 20, 82],
+                            backgroundColor: [
+                                'rgba(220, 53, 69, 0.8)',
+                                'rgba(255, 193, 7, 0.8)',
+                                'rgba(255, 87, 34, 0.8)',
+                                'rgba(40, 167, 69, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgb(220, 53, 69)',
+                                'rgb(255, 193, 7)',
+                                'rgb(255, 87, 34)',
+                                'rgb(40, 167, 69)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: {
+                                    display: true,
+                                    text: 'Percentage (%)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Economic Impact Chart
+            const ctx3 = document.getElementById('economicImpact');
+            if (ctx3) {
+                new Chart(ctx3, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Annual Compliance (CA)', 'Job Losses (CO)', 'Economic Loss (CO)'],
+                        datasets: [{
+                            label: 'Impact Metrics',
+                            data: [16, 40, 7000],
+                            backgroundColor: [
+                                'rgba(102, 126, 234, 0.8)',
+                                'rgba(118, 75, 162, 0.8)',
+                                'rgba(220, 53, 69, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgb(102, 126, 234)',
+                                'rgb(118, 75, 162)',
+                                'rgb(220, 53, 69)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'bottom'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.dataIndex === 0) {
+                                            label += '$' + context.parsed + 'K per business';
+                                        } else if (context.dataIndex === 1) {
+                                            label += context.parsed + 'K jobs';
+                                        } else {
+                                            label += '$' + context.parsed + 'M';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
             }
         });
     </script>
