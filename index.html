@@ -389,14 +389,14 @@
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">$16K</span>
-                    <span class="stat-label">Annual Compliance Cost (CA)</span>
+                    <span class="stat-label">Annual Compliance Cost (California)</span>
                     <div class="stat-source">
                         <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">Source: U.S. Chamber of Commerce</a>
                     </div>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">$7B</span>
-                    <span class="stat-label">Economic Loss Projected (CO by 2030)</span>
+                    <span class="stat-label">Economic Loss Projected (Colorado by 2030)</span>
                     <div class="stat-source">
                         <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">Source: U.S. Chamber of Commerce</a>
                     </div>
@@ -637,4 +637,235 @@
                             backgroundColor: [
                                 'rgba(220, 53, 69, 0.8)',
                                 'rgba(255, 193, 7, 0.8)',
-                                'rgba(255, 87, 34,
+                                'rgba(255, 87, 34, 0.8)',
+                                'rgba(40, 167, 69, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgb(220, 53, 69)',
+                                'rgb(255, 193, 7)',
+                                'rgb(255, 87, 34)',
+                                'rgb(40, 167, 69)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0,0,0,0.8)',
+                                padding: 12,
+                                titleFont: {
+                                    size: 14
+                                },
+                                bodyFont: {
+                                    size: 13
+                                },
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.parsed.y + '% of small businesses';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: {
+                                    display: true,
+                                    text: 'Percentage of Small Businesses (%)',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    },
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        size: 11
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Economic Impact Chart
+            const ctx3 = document.getElementById('economicImpact');
+            if (ctx3) {
+                new Chart(ctx3, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['California: $16K Annual Compliance Cost per Business', 'Colorado: 40,000 Projected Job Losses by 2030', 'Colorado: $7 Billion Economic Output Loss by 2030'],
+                        datasets: [{
+                            label: 'Impact Metrics',
+                            data: [16, 40, 7000],
+                            backgroundColor: [
+                                'rgba(102, 126, 234, 0.8)',
+                                'rgba(118, 75, 162, 0.8)',
+                                'rgba(220, 53, 69, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgb(102, 126, 234)',
+                                'rgb(118, 75, 162)',
+                                'rgb(220, 53, 69)'
+                            ],
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'right',
+                                labels: {
+                                    font: {
+                                        size: 11
+                                    },
+                                    padding: 15,
+                                    boxWidth: 20
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0,0,0,0.8)',
+                                padding: 12,
+                                titleFont: {
+                                    size: 14
+                                },
+                                bodyFont: {
+                                    size: 13
+                                },
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = '';
+                                        if (context.dataIndex === 0) {
+                                            label = 'California: $16,000 per business annually';
+                                        } else if (context.dataIndex === 1) {
+                                            label = 'Colorado: 40,000 job losses projected';
+                                        } else {
+                                            label = 'Colorado: $7 billion economic loss';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Federal vs State Chart
+            const ctx4 = document.getElementById('federalVsState');
+            if (ctx4) {
+                new Chart(ctx4, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2023', '2024'],
+                        datasets: [
+                            {
+                                label: 'Federal Tech Laws Passed',
+                                data: [27, 15],
+                                backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                                borderColor: 'rgb(102, 126, 234)',
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'State Tech Laws Passed',
+                                data: [65, 238],
+                                backgroundColor: 'rgba(220, 53, 69, 0.8)',
+                                borderColor: 'rgb(220, 53, 69)',
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        size: 13,
+                                        weight: 'bold'
+                                    },
+                                    padding: 15
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0,0,0,0.8)',
+                                padding: 12,
+                                titleFont: {
+                                    size: 14
+                                },
+                                bodyFont: {
+                                    size: 13
+                                },
+                                callbacks: {
+                                    afterBody: function(context) {
+                                        if (context[0].datasetIndex === 1 && context[0].dataIndex === 1) {
+                                            return '\n⚠️ 266% increase from 2023!';
+                                        }
+                                        return '';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Number of Laws Passed',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Year',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
