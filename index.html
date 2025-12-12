@@ -145,12 +145,52 @@
             opacity: 0.95;
         }
 
+        .stat-source {
+            font-size: 0.85em;
+            opacity: 0.85;
+            margin-top: 10px;
+        }
+
+        .stat-source a {
+            color: white;
+            text-decoration: underline;
+        }
+
         .chart-container {
             background: white;
             padding: 30px;
             border-radius: 12px;
             margin: 20px 0;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .chart-description {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .chart-description p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        .chart-source {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .chart-source a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .chart-source a:hover {
+            text-decoration: underline;
         }
 
         .chart-wrapper {
@@ -253,6 +293,18 @@
             transform: scale(1.05);
         }
 
+        a.data-link {
+            color: #667eea;
+            text-decoration: none;
+            border-bottom: 2px dotted #667eea;
+            transition: all 0.3s;
+        }
+
+        a.data-link:hover {
+            color: #764ba2;
+            border-bottom: 2px solid #764ba2;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.8em;
@@ -293,9 +345,9 @@
         <section id="summary" class="section">
             <h2>Executive Summary</h2>
             <div class="executive-summary">
-                <p>The United States is at a critical juncture regarding the governance of artificial intelligence. In 2024, state lawmakers introduced nearly <strong>700 AI-related bills</strong> across 45 states, with 113 enacted into law—a dramatic increase from just 191 bills in 2023. This explosive growth in state-level AI regulation has created a fragmented compliance landscape threatening American innovation and disproportionately harming small businesses.</p>
+                <p>The United States is at a critical juncture regarding the governance of artificial intelligence. In 2024, state lawmakers introduced nearly <strong><a class="data-link" href="https://www.bsa.org/news-events/news/2025-state-ai-wave-building-after-700-bills-in-2024" target="_blank">700 AI-related bills</a></strong> across 45 states, with 113 enacted into law—a dramatic increase from just <a class="data-link" href="https://www.bsa.org/news-events/news/2025-state-ai-wave-building-after-700-bills-in-2024" target="_blank">191 bills in 2023</a>. This explosive growth in state-level AI regulation has created a fragmented compliance landscape threatening American innovation and disproportionately harming small businesses.</p>
                 
-                <p><strong>65% of small businesses</strong> are concerned about rising litigation and compliance costs from conflicting AI laws. California's regulations alone will impose nearly <strong>$16,000 in annual compliance costs</strong> on small businesses.</p>
+                <p><strong><a class="data-link" href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">65% of small businesses</a></strong> are concerned about rising litigation and compliance costs from conflicting AI laws. California's regulations alone will impose nearly <strong><a class="data-link" href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">$16,000 in annual compliance costs</a></strong> on small businesses.</p>
                 
                 <p><strong>This policy brief recommends establishing a federal AI regulatory framework that preempts conflicting state regulations while preserving state authority to enforce consumer protection and anti-discrimination laws.</strong></p>
             </div>
@@ -304,59 +356,111 @@
         <section id="background" class="section">
             <h2>Background and Problem Statement</h2>
             
-            <p>The lack of comprehensive federal legislation on AI created a vacuum that states have rushed to fill. In 2024, 46 states passed 238 new pieces of technology regulation, an astounding <strong>163% increase</strong> from the previous year. This exploding regulation covers a wide range of topics: employment and credit decision-making using automated decisions, preventing algorithmic bias, deepfakes, and data privacy requirements.</p>
+            <p>The lack of comprehensive federal legislation on AI created a vacuum that states have rushed to fill. In 2024, <a class="data-link" href="https://csmapnyu.org/impact/policy/the-state-of-state-technology-policy-2024-report" target="_blank">46 states passed 238 new pieces of technology regulation</a>, an astounding <strong><a class="data-link" href="https://csmapnyu.org/impact/policy/the-state-of-state-technology-policy-2024-report" target="_blank">163% increase</a></strong> from the previous year. This exploding regulation covers a wide range of topics: employment and credit decision-making using automated decisions, preventing algorithmic bias, deepfakes, and data privacy requirements.</p>
 
-            <p>Colorado was the first to enact broad legislation on AI, through SB-205, effective June 2026. California, Connecticut, and Virginia have also enacted various unique implementations, creating a patchwork of conflicting requirements.</p>
+            <p><a class="data-link" href="https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-united-states" target="_blank">Colorado was the first to enact broad legislation on AI, through SB-205</a>, effective June 2026. California, Connecticut, and Virginia have also enacted various unique implementations, creating a patchwork of conflicting requirements.</p>
 
             <h3>Key Stakeholders</h3>
             <p>These include state and federal government agencies, technology companies ranging from major platforms to AI startups, small businesses using AI to scale operations, consumers, and civil society organizations looking for protection against AI-related harms, and investors who also assess regulatory uncertainty.</p>
 
             <h3>The Urgency</h3>
-            <p>Research shows that Colorado's AI law alone could cost the state <strong>40,000 jobs and $7 billion</strong> in economic output by 2030. When faced with regulations like those in Colorado and California, one-third of small business owners said they would scale down AI use, and another fifth would avoid AI altogether.</p>
+            <p>Research shows that Colorado's AI law alone could cost the state <strong><a class="data-link" href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">40,000 jobs and $7 billion</a></strong> in economic output by 2030. When faced with regulations like those in Colorado and California, <a class="data-link" href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">one-third of small business owners said they would scale down AI use, and another fifth would avoid AI altogether</a>.</p>
 
-            <p>A startup facing a 200% increase in compliance costs could see its operating margin shift from profitable at 13% to a loss of -7%. Without standardized frameworks, companies cannot budget for compliance with accuracy, which creates legal uncertainty advantageous to large corporations and detrimental to innovation by startups.</p>
+            <p>A startup facing a <a class="data-link" href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">200% increase in compliance costs could see its operating margin shift from profitable at 13% to a loss of -7%</a>. Without standardized frameworks, companies cannot budget for compliance with accuracy, which creates legal uncertainty advantageous to large corporations and detrimental to innovation by startups.</p>
         </section>
 
         <section id="analysis" class="section">
-            <h2>Analysis</h2>
+            <h2>Data Analysis</h2>
 
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">693</span>
                     <span class="stat-label">AI Bills Introduced in 2024</span>
+                    <div class="stat-source">
+                        <a href="https://www.bsa.org/news-events/news/2025-state-ai-wave-building-after-700-bills-in-2024" target="_blank">Source: BSA Software Alliance</a>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">65%</span>
                     <span class="stat-label">Small Businesses Concerned About Costs</span>
+                    <div class="stat-source">
+                        <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">Source: U.S. Chamber of Commerce</a>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">$16K</span>
                     <span class="stat-label">Annual Compliance Cost (CA)</span>
+                    <div class="stat-source">
+                        <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">Source: U.S. Chamber of Commerce</a>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">$7B</span>
                     <span class="stat-label">Economic Loss Projected (CO by 2030)</span>
+                    <div class="stat-source">
+                        <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">Source: U.S. Chamber of Commerce</a>
+                    </div>
                 </div>
             </div>
 
             <div class="chart-container">
                 <h3>Growth of State AI Legislation (2020-2024)</h3>
+                <div class="chart-description">
+                    <p><strong>Key Insight:</strong> AI legislation has exploded exponentially, with 2024 seeing nearly 700 bills introduced—a 263% increase from 2023.</p>
+                    <p><strong>What This Means:</strong> States are rushing to fill the federal vacuum, creating an unsustainable patchwork of conflicting regulations. This exponential growth shows no signs of slowing without federal intervention.</p>
+                </div>
                 <div class="chart-wrapper">
                     <canvas id="legislationGrowth"></canvas>
+                </div>
+                <div class="chart-source">
+                    Data Source: <a href="https://www.bsa.org/news-events/news/2025-state-ai-wave-building-after-700-bills-in-2024" target="_blank">BSA Software Alliance - 2025 State AI Wave Building After 700 Bills in 2024</a>
                 </div>
             </div>
 
             <div class="chart-container">
                 <h3>Small Business Response to AI Regulations</h3>
+                <div class="chart-description">
+                    <p><strong>Key Insight:</strong> While 82% of businesses using AI saw workforce increases, the regulatory burden is causing businesses to pull back from AI adoption.</p>
+                    <p><strong>The Paradox:</strong> AI helps businesses grow and create jobs, but conflicting regulations are forcing them to scale down or avoid AI entirely—stifling innovation and economic growth.</p>
+                    <p><strong>Impact:</strong> 65% are concerned about costs, 33% would scale down operations, and 20% would completely avoid AI technology.</p>
+                </div>
                 <div class="chart-wrapper">
                     <canvas id="businessResponse"></canvas>
+                </div>
+                <div class="chart-source">
+                    Data Source: <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">U.S. Chamber of Commerce - How Patchwork AI Regulations Threaten Small Businesses</a>
                 </div>
             </div>
 
             <div class="chart-container">
-                <h3>Economic Impact of Compliance Costs</h3>
+                <h3>Economic Impact Analysis: The Cost of Regulatory Fragmentation</h3>
+                <div class="chart-description">
+                    <p><strong>Three Critical Metrics:</strong></p>
+                    <p>• <strong>$16,000 Annual Compliance Cost (California):</strong> Per small business, just for one state's regulations</p>
+                    <p>• <strong>40,000 Job Losses (Colorado):</strong> Projected by 2030 from Colorado's AI law alone</p>
+                    <p>• <strong>$7 Billion Economic Loss (Colorado):</strong> Total economic output decline by 2030</p>
+                    <p><strong>Bottom Line:</strong> This represents just TWO states. Multiply this across 45+ states with different laws, and the economic damage becomes catastrophic for American innovation.</p>
+                </div>
                 <div class="chart-wrapper">
                     <canvas id="economicImpact"></canvas>
+                </div>
+                <div class="chart-source">
+                    Data Sources: <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">U.S. Chamber of Commerce Economic Analysis</a> | Colorado projections from Common Sense Institute study
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Federal vs. State Legislative Activity (2023-2024)</h3>
+                <div class="chart-description">
+                    <p><strong>The Leadership Vacuum:</strong> While states passed 238 tech laws in 2024, federal action remains minimal.</p>
+                    <p><strong>Why This Matters:</strong> Without federal leadership, each state creates its own rules, forcing businesses to comply with 50+ different standards—an impossible task for startups and small businesses.</p>
+                    <p><strong>The Need:</strong> Federal action is essential to create a unified framework that protects consumers while enabling innovation.</p>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="federalVsState"></canvas>
+                </div>
+                <div class="chart-source">
+                    Data Source: <a href="https://csmapnyu.org/impact/policy/the-state-of-state-technology-policy-2024-report" target="_blank">NYU Center on Technology Policy - The State of State Technology Policy: 2024 Report</a>
                 </div>
             </div>
         </section>
@@ -382,7 +486,7 @@
                     <h4 style="color: #28a745;">Why This Option Is Best</h4>
                     <p>This approach reduces compliance burden while being respectful of state interests in consumer protection. It also adheres to successful federal frameworks laid out in other areas, such as securities regulation. The economic evidence is clear: reducing conflicting AI laws will allow American businesses, especially small businesses, to innovate without fear of inadvertently running afoul of the law. Consumers retain strong protection through both federal standards and state enforcement.</p>
                     
-                    <p>More importantly, this bipartisan approach is politically achievable—89% of tech laws were enacted in states with trifecta governments; this suggests broad support for carefully crafted federal action.</p>
+                    <p>More importantly, this bipartisan approach is politically achievable—<a class="data-link" href="https://csmapnyu.org/impact/policy/the-state-of-state-technology-policy-2024-report" target="_blank">89% of tech laws were enacted in states with trifecta governments</a>; this suggests broad support for carefully crafted federal action.</p>
                     
                     <p><strong>Implementation</strong> would include risk-based standards for consequential decisions, mandatory transparency requirements, impact assessments, clear consumer opt-out mechanisms, safe harbor provisions, and technical assistance for small businesses.</p>
                 </div>
@@ -401,15 +505,15 @@
         <section id="references" class="section references">
             <h2>References</h2>
             <ol>
-                <li>BSA | The Software Alliance. (2024). <em>2025 State AI Wave Building After 700 Bills in 2024</em>. https://www.bsa.org/news-events/news/2025-state-ai-wave-building-after-700-bills-in-2024</li>
+                <li>BSA | The Software Alliance. (2024). <em>2025 State AI Wave Building After 700 Bills in 2024</em>. <a href="https://www.bsa.org/news-events/news/2025-state-ai-wave-building-after-700-bills-in-2024" target="_blank">https://www.bsa.org/news-events/news/2025-state-ai-wave-building-after-700-bills-in-2024</a></li>
                 
-                <li>Electronic Frontier Foundation. (2025). <em>How State Tech Policies in 2024 Set the Stage for 2025</em>. https://www.eff.org/deeplinks/2025/02/how-state-tech-policies-2024-set-stage-2025</li>
+                <li>Electronic Frontier Foundation. (2025). <em>How State Tech Policies in 2024 Set the Stage for 2025</em>. <a href="https://www.eff.org/deeplinks/2025/02/how-state-tech-policies-2024-set-stage-2025" target="_blank">https://www.eff.org/deeplinks/2025/02/how-state-tech-policies-2024-set-stage-2025</a></li>
                 
-                <li>NYU Center on Technology Policy. (2024). <em>The State of State Technology Policy: 2024 Report</em>. https://csmapnyu.org/impact/policy/the-state-of-state-technology-policy-2024-report</li>
+                <li>NYU Center on Technology Policy. (2024). <em>The State of State Technology Policy: 2024 Report</em>. <a href="https://csmapnyu.org/impact/policy/the-state-of-state-technology-policy-2024-report" target="_blank">https://csmapnyu.org/impact/policy/the-state-of-state-technology-policy-2024-report</a></li>
                 
-                <li>U.S. Chamber of Commerce. (2025). <em>How Patchwork AI Regulations Threaten Small Businesses</em>. https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown</li>
+                <li>U.S. Chamber of Commerce. (2025). <em>How Patchwork AI Regulations Threaten Small Businesses</em>. <a href="https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown" target="_blank">https://www.uschamber.com/technology/the-hidden-cost-of-50-state-ai-laws-a-data-driven-breakdown</a></li>
                 
-                <li>White & Case LLP. (2024). <em>AI Watch: Global Regulatory Tracker - United States</em>. https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-united-states</li>
+                <li>White & Case LLP. (2024). <em>AI Watch: Global Regulatory Tracker - United States</em>. <a href="https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-united-states" target="_blank">https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-united-states</a></li>
             </ol>
         </section>
 
@@ -434,10 +538,15 @@
                             label: 'AI Bills Introduced',
                             data: [45, 78, 125, 191, 693],
                             borderColor: '#667eea',
-                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                            borderWidth: 3,
+                            backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                            borderWidth: 4,
                             fill: true,
-                            tension: 0.4
+                            tension: 0.4,
+                            pointRadius: 6,
+                            pointHoverRadius: 8,
+                            pointBackgroundColor: '#667eea',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2
                         }]
                     },
                     options: {
@@ -446,7 +555,36 @@
                         plugins: {
                             legend: {
                                 display: true,
-                                position: 'top'
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0,0,0,0.8)',
+                                padding: 12,
+                                titleFont: {
+                                    size: 14
+                                },
+                                bodyFont: {
+                                    size: 13
+                                },
+                                callbacks: {
+                                    label: function(context) {
+                                        return 'Bills Introduced: ' + context.parsed.y;
+                                    },
+                                    afterLabel: function(context) {
+                                        if (context.dataIndex > 0) {
+                                            const prevValue = context.dataset.data[context.dataIndex - 1];
+                                            const change = ((context.parsed.y - prevValue) / prevValue * 100).toFixed(0);
+                                            return 'Change: +' + change + '% from previous year';
+                                        }
+                                        return '';
+                                    }
+                                }
                             }
                         },
                         scales: {
@@ -454,7 +592,31 @@
                                 beginAtZero: true,
                                 title: {
                                     display: true,
-                                    text: 'Number of Bills'
+                                    text: 'Number of AI Bills Introduced',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Year',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
                                 }
                             }
                         }
@@ -468,101 +630,11 @@
                 new Chart(ctx2, {
                     type: 'bar',
                     data: {
-                        labels: ['Concerned About Costs', 'Would Scale Down AI', 'Would Avoid AI', 'AI Increased Workforce'],
+                        labels: ['Concerned About\nCompliance Costs', 'Would Scale\nDown AI Use', 'Would Avoid\nAI Entirely', 'AI Increased\nTheir Workforce'],
                         datasets: [{
                             label: 'Percentage of Small Businesses',
                             data: [65, 33, 20, 82],
                             backgroundColor: [
                                 'rgba(220, 53, 69, 0.8)',
                                 'rgba(255, 193, 7, 0.8)',
-                                'rgba(255, 87, 34, 0.8)',
-                                'rgba(40, 167, 69, 0.8)'
-                            ],
-                            borderColor: [
-                                'rgb(220, 53, 69)',
-                                'rgb(255, 193, 7)',
-                                'rgb(255, 87, 34)',
-                                'rgb(40, 167, 69)'
-                            ],
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100,
-                                title: {
-                                    display: true,
-                                    text: 'Percentage (%)'
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-
-            // Economic Impact Chart
-            const ctx3 = document.getElementById('economicImpact');
-            if (ctx3) {
-                new Chart(ctx3, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Annual Compliance (CA)', 'Job Losses (CO)', 'Economic Loss (CO)'],
-                        datasets: [{
-                            label: 'Impact Metrics',
-                            data: [16, 40, 7000],
-                            backgroundColor: [
-                                'rgba(102, 126, 234, 0.8)',
-                                'rgba(118, 75, 162, 0.8)',
-                                'rgba(220, 53, 69, 0.8)'
-                            ],
-                            borderColor: [
-                                'rgb(102, 126, 234)',
-                                'rgb(118, 75, 162)',
-                                'rgb(220, 53, 69)'
-                            ],
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                display: true,
-                                position: 'bottom'
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        let label = context.label || '';
-                                        if (label) {
-                                            label += ': ';
-                                        }
-                                        if (context.dataIndex === 0) {
-                                            label += '$' + context.parsed + 'K per business';
-                                        } else if (context.dataIndex === 1) {
-                                            label += context.parsed + 'K jobs';
-                                        } else {
-                                            label += '$' + context.parsed + 'M';
-                                        }
-                                        return label;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+                                'rgba(255, 87, 34,
